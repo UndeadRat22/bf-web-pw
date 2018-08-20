@@ -18,7 +18,11 @@ def forcedict(url, field, dictpath, pattern_comp):
                 print("password: {} was wrong".format(line))
             else:
                 print("\n------------------------------\nCHECK THIS OUT: {}\n------------------------------".format(line))
-                input("continue?")
+                c = input("continue? [y/n]")
+                if c == "y":
+                    continue
+                else:
+                    return line
 
 if __name__ == "__main__":
     forcedict("http://88.198.233.174:37417/", "password", "/mnt/d/_root/data/rockyou", b"Invalid")
